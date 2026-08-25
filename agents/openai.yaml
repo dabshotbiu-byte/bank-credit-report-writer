@@ -1,0 +1,4 @@
+interface:
+  display_name: "对公授信报告生成技能"
+  short_description: "根据尽调、流水及财务材料撰写完整的对公授信报告"
+  default_prompt: "Use $bank-credit-report-writer to analyze the supplied company materials and draft a complete corporate credit due-diligence report."

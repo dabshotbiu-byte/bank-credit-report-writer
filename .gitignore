@@ -1,0 +1,11 @@
+sources/
+tmp/
+*.xlsx
+*.xls
+*.csv
+*.doc
+*.docx
+*.pdf
+*.png
+__pycache__/
+.DS_Store
