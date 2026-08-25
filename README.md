@@ -96,10 +96,16 @@ $bank-credit-report-writer
 
 仓库内置三个辅助脚本。建议在复制出的工作目录中运行，保留原始材料不变。
 
+银行流水和科目余额表脚本需要 Python 3，以及 `pandas`、`openpyxl`、`xlsxwriter`：
+
+```bash
+python3 -m pip install pandas openpyxl xlsxwriter
+```
+
 ### 银行流水初步分类
 
 ```bash
-python scripts/review_bank_flows.py bank-flows.xlsx bank-flow-review.xlsx
+python3 scripts/review_bank_flows.py bank-flows.xlsx bank-flow-review.xlsx
 ```
 
 脚本会生成流水分类和汇总底稿。自动分类仅用于缩小人工核查范围，最终销售回款口径仍需结合对手方、摘要、合同、发票和业务背景逐笔判断。
@@ -107,7 +113,7 @@ python scripts/review_bank_flows.py bank-flows.xlsx bank-flow-review.xlsx
 ### 科目余额表分析
 
 ```bash
-python scripts/review_trial_balance.py trial-balance.xlsx trial-balance-review.xlsx \
+python3 scripts/review_trial_balance.py trial-balance.xlsx trial-balance-review.xlsx \
   --parent-digits 4
 ```
 
@@ -116,7 +122,7 @@ python scripts/review_trial_balance.py trial-balance.xlsx trial-balance-review.x
 ### 业务模式图
 
 ```bash
-python scripts/render_business_flow.py flow.json business-flow.svg
+python3 scripts/render_business_flow.py flow.json business-flow.svg
 ```
 
 `flow.json` 示例：
