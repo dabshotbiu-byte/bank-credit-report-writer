@@ -22,15 +22,23 @@ Cross-check legal name, unified social credit code, status, registered capital a
 
 ## Build the operating analysis before writing the report
 
-Read [references/business-analysis.md](references/business-analysis.md) whenever the applicant has more than one product, more than one revenue model, or a non-obvious delivery chain.
+For every full credit report or operating-analysis task, read and follow [references/business-analysis.md](references/business-analysis.md). This is mandatory even when the applicant appears to have only one product or one revenue model.
 
 Use this analytical chain:
 
 `业务模式 → 产品结构 → 客户 → 供应商 → 行业分析 → 竞争态势与竞争对手 → 核心竞争力`
 
-For every material product or service, explain the user and purchase scenario, pain point, functionality, delivery and acceptance, pricing and revenue recognition, gross-margin driver, recurring or one-off nature, sales channel, cash conversion, physical/service/data delivery, concrete applications, substitutes, regulation, and the applicant's defensible position. Quantify revenue, volume, price, gross margin, customer concentration, supplier concentration, payment terms, and working-capital occupation whenever the evidence permits.
+Build a product register from brochures, websites, contracts, invoice descriptions, revenue ledgers and interviews before drafting. Cover every disclosed product or service line. Products with the same function, users, transaction chain, pricing and delivery may share one product group only when every included name/model is listed and the grouping rationale is stated; never hide a material product inside “其他”.
 
-Create one flowchart per materially different business model with `scripts/render_business_flow.py`. Financial-flow arrows must be red and goods/service/data-flow arrows black. Put the diagrams beside the related product analysis, not in an unrelated appendix.
+For each product or valid product group, write a standalone analysis that explains, in language a non-specialist approver can understand: what it is; the operating pain point it solves; who uses it and who pays; the purchase trigger; the physical/technical composition; specific applications; procurement/production/delivery/acceptance; sales channel; pricing and revenue recognition; gross-margin source; payment terms and working-capital occupation; mapped customers and suppliers; substitutes and named competitors; regulatory or qualification constraints; and the applicant's evidenced advantage. Quantify revenue, volume, price band, gross margin, repeat purchase, concentration and cash-conversion cycle whenever evidence permits. A product list or revenue table is supporting evidence, not a substitute for this narrative.
+
+Do not compress the operating section into a short company overview followed by generic customer, supplier and industry paragraphs. Preserve the supplied template's field order and question structure, but populate it with the full sequence below:
+
+`业务模式 → 产品结构及逐产品分析 → 收入结构 → 客户 → 供应商 → 结算与资金占用 → 行业分析 → 竞争态势与竞争对手 → 核心竞争力 → 对还款来源的判断`
+
+Create at least one flowchart for every product or valid product group with `scripts/render_business_flow.py`. Products may share a chart only when their parties, goods/service/data flow, fund flow, delivery/acceptance and settlement timing are substantively identical; caption the chart with all covered products. Financial-flow arrows must be red and goods/service/data-flow arrows black. Label the actual parties, subject matter, direction and known timing/percentage. Put each diagram immediately beside the related product analysis and explain the working-capital implication in prose; never place all diagrams in an unrelated appendix.
+
+Before moving to financial analysis, complete the coverage gate in `references/business-analysis.md`. Do not deliver a full report while any disclosed product lacks a scenario, concrete application, business-model explanation, required flowchart, customer/supplier mapping, industry/competitor link, competitive-position conclusion or cash-flow implication.
 
 ## Verify revenue and financial data
 
@@ -44,7 +52,7 @@ Read [references/financial-verification.md](references/financial-verification.md
 
 ## Draft in the target voice and structure
 
-Use [references/report-blueprint.md](references/report-blueprint.md) for the selected small-enterprise or complex-structure template and [references/style-guide.md](references/style-guide.md) for tone.
+Use [references/report-blueprint.md](references/report-blueprint.md) for the selected small-enterprise or complex-structure template and [references/style-guide.md](references/style-guide.md) for tone. The user's supplied template is the structural authority: retain its headings, question order, tables and placement of figures rather than replacing the business section with a generic outline.
 
 Lead with the facility and the reasons it is supportable. Use “申请人”, the short company name, “经营团队”, and “我行” naturally. Pair each conclusion with numbers, counterparties, terms, or operating logic. Add the analyst's own reasoned interpretation, clearly distinguishing it from facts.
 
@@ -54,4 +62,4 @@ The report normally includes: facility proposal and purpose; investigation summa
 
 ## Deliver and check
 
-When creating a Word deliverable, preserve the user's template and use the document workflow to render every page for visual QA. Check table widths, headings, page breaks, figures, red/black arrow colors, numeric units, periods, entity scope, totals, cross-references, and consistent company names. Deliver the finished report plus working papers only when requested. Do not include source tokens, TODOs, empty boilerplate, unsupported superlatives, or private raw evidence in the final package.
+When creating a Word deliverable, preserve the user's template and use the document workflow to render every page for visual QA. Check table widths, headings, page breaks, figures, red/black arrow colors, numeric units, periods, entity scope, totals, cross-references, consistent company names, and the product coverage gate. Confirm that every product named in the product register appears in the finished operating section and is connected to a diagram and credit implication. Deliver the finished report plus working papers only when requested. Do not include source tokens, TODOs, empty boilerplate, unsupported superlatives, or private raw evidence in the final package.
