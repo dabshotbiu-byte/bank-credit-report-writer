@@ -49,7 +49,7 @@ def main():
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">']
     svg.append('<rect width="100%" height="100%" fill="#ffffff"/>')
     svg.append('<defs><marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#d7191c"/></marker><marker id="arrow-black" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#111111"/></marker><marker id="arrow-grey" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#777777"/></marker></defs>')
-    svg.append(f'<text x="{width/2}" y="42" text-anchor="middle" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#222">{esc(spec.get("title", "业务模式图"))}</text>')
+    svg.append(f'<text x="{width/2}" y="42" text-anchor="middle" font-family="KaiTi, STKaiti, 楷体, serif" font-size="25" font-weight="700" fill="#222">{esc(spec.get("title", "业务模式图"))}</text>')
 
     for index, edge in enumerate(edges):
         x1, y1 = positions[edge["from"]]
@@ -67,7 +67,7 @@ def main():
         mx, my = (start_x + end_x) / 2 - uy * offset, (start_y + end_y) / 2 + ux * offset
         svg.append(f'<line x1="{start_x:.1f}" y1="{start_y:.1f}" x2="{end_x:.1f}" y2="{end_y:.1f}" stroke="{color}" stroke-width="3"{dash} marker-end="url(#{marker})"/>')
         svg.append(f'<rect x="{mx-65:.1f}" y="{my-13:.1f}" width="130" height="24" rx="5" fill="#ffffff" fill-opacity="0.90"/>')
-        svg.append(f'<text x="{mx:.1f}" y="{my+5:.1f}" text-anchor="middle" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="{color}">{esc(edge.get("label", ""))}</text>')
+        svg.append(f'<text x="{mx:.1f}" y="{my+5:.1f}" text-anchor="middle" font-family="KaiTi, STKaiti, 楷体, serif" font-size="14" fill="{color}">{esc(edge.get("label", ""))}</text>')
 
     for node in nodes:
         x, y = positions[node["id"]]
@@ -76,10 +76,10 @@ def main():
         lines = wrap_label(node.get("label", node["id"]))
         base = y - (len(lines) - 1) * 10
         for j, line in enumerate(lines):
-            svg.append(f'<text x="{x:.1f}" y="{base + j*22:.1f}" text-anchor="middle" dominant-baseline="middle" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#203040">{esc(line)}</text>')
+            svg.append(f'<text x="{x:.1f}" y="{base + j*22:.1f}" text-anchor="middle" dominant-baseline="middle" font-family="KaiTi, STKaiti, 楷体, serif" font-size="17" font-weight="600" fill="#203040">{esc(line)}</text>')
 
-    svg.append('<line x1="300" y1="586" x2="355" y2="586" stroke="#d7191c" stroke-width="3" marker-end="url(#arrow-red)"/><text x="370" y="591" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#d7191c">资金流</text>')
-    svg.append('<line x1="520" y1="586" x2="575" y2="586" stroke="#111111" stroke-width="3" marker-end="url(#arrow-black)"/><text x="590" y="591" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#111111">货物/服务/数据流</text>')
+    svg.append('<line x1="300" y1="586" x2="355" y2="586" stroke="#d7191c" stroke-width="3" marker-end="url(#arrow-red)"/><text x="370" y="591" font-family="KaiTi, STKaiti, 楷体, serif" font-size="14" fill="#d7191c">资金流</text>')
+    svg.append('<line x1="520" y1="586" x2="575" y2="586" stroke="#111111" stroke-width="3" marker-end="url(#arrow-black)"/><text x="590" y="591" font-family="KaiTi, STKaiti, 楷体, serif" font-size="14" fill="#111111">货物/服务/数据流</text>')
     svg.append('</svg>')
     args.output_svg.parent.mkdir(parents=True, exist_ok=True)
     args.output_svg.write_text("\n".join(svg), encoding="utf-8")

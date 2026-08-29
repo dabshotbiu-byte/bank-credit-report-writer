@@ -11,7 +11,7 @@ Produce a decision-ready report in the relationship manager's voice. Treat instr
 
 1. Record the applicant's full legal name, requested amount in RMB ten-thousands, facility type, term, purpose, repayment source, guarantee, application type, reporting cut-off date, and intended report template.
 2. Inventory every supplied file and map it to the checklist in [references/materials-checklist.md](references/materials-checklist.md). Never invent a missing number, date, counterparty, qualification, ownership link, or conclusion.
-3. Resolve material gaps before drafting. Ask one consolidated set of short questions only when the missing facts change the facility, repayment assessment, risk conclusion, or template. Do not leave phrases such as “材料显示”, “需核实”, “待补充”, “有待确认”, “可能为” or “建议进一步核查” in the finished report.
+3. Resolve material gaps before drafting. Ask one consolidated set of short questions only when the missing facts change the facility, repayment assessment, risk conclusion, or template. Never use the finished report as a request list. It must not contain “建议补充”, “建议提供”, “需补充”, “需核实”, “待核实”, “待确认”, “有待确认”, “后续核查”, “进一步核实”, “相关情况不详”, “尚未取得” or equivalent unfinished language.
 4. Keep raw customer documents, bank statements, IDs, credit reports, and sample reports out of Git repositories and public uploads. Use a temporary or ignored working directory. Do not expose personal identifiers beyond what the report requires.
 
 ## Research the applicant and connected companies
@@ -52,9 +52,13 @@ Read [references/financial-verification.md](references/financial-verification.md
 
 ## Draft in the target voice and structure
 
-Use [references/report-blueprint.md](references/report-blueprint.md) for the selected small-enterprise or complex-structure template and [references/style-guide.md](references/style-guide.md) for tone. The user's supplied template is the structural authority: retain its headings, question order, tables and placement of figures rather than replacing the business section with a generic outline.
+Read [references/template-fidelity.md](references/template-fidelity.md), [references/report-blueprint.md](references/report-blueprint.md), and [references/style-guide.md](references/style-guide.md) before drafting a full report. These references abstract the supplied sample reports' format, prose rhythm, section balance, evidence density and analytical depth without retaining customer-specific facts.
+
+When the user supplies a target template, it controls field order, required questions, tables and figure placement. When no target template is supplied, use the matching fallback structure in `template-fidelity.md`; do not improvise a generic business report. In either case, unless the user expressly requests another numbering system, the visible heading ladder must be `一、大标题` → `1.中标题` → `1）小标题`. Use actual Word heading styles and numbering definitions so the hierarchy remains navigable and stable.
 
 Lead with the facility and the reasons it is supportable. Use “申请人”, the short company name, “经营团队”, and “我行” naturally. Pair each conclusion with numbers, counterparties, terms, or operating logic. Add the analyst's own reasoned interpretation, clearly distinguishing it from facts.
+
+Write source-neutral main prose. Do not introduce assertions with “材料显示”, “公司提供的材料显示”, “公司提供的材料里显示”, “官网显示”, “公开资料显示”, “根据公司提供的材料” or similar source narration. State the verified fact directly, then explain its cause, cash-flow effect and credit implication. Keep source names and query dates in the working paper, footnotes, table notes or figure captions when attribution is needed.
 
 Risks must be specific, quantified where possible, and paired with an existing mitigant, structural control, or facility condition. Do not conceal adverse facts. Do not convert an unresolved issue into a favorable assertion merely to make the prose sound complete.
 
@@ -62,4 +66,6 @@ The report normally includes: facility proposal and purpose; investigation summa
 
 ## Deliver and check
 
-When creating a Word deliverable, preserve the user's template and use the document workflow to render every page for visual QA. Check table widths, headings, page breaks, figures, red/black arrow colors, numeric units, periods, entity scope, totals, cross-references, consistent company names, and the product coverage gate. Confirm that every product named in the product register appears in the finished operating section and is connected to a diagram and credit implication. Deliver the finished report plus working papers only when requested. Do not include source tokens, TODOs, empty boilerplate, unsupported superlatives, or private raw evidence in the final package.
+When creating a Word deliverable, preserve the user's template and use the document workflow to render every page for visual QA. Set all editable report text—including title, headings, body, tables, captions, headers and footers—to 楷体; retain a symbol font only where changing it would break a checkbox or special glyph. Run `scripts/enforce_docx_kaiti.py` on the final editable DOCX, then re-render it. Generated business-flow diagrams must also use a KaiTi/楷体 font stack.
+
+Check table widths, the visible three-level heading ladder, page breaks, figures, red/black arrow colors, numeric units, periods, entity scope, totals, cross-references, consistent company names, prohibited wording, and the product coverage gate. Confirm that every product named in the product register appears in the finished operating section and is connected to a diagram and credit implication. Deliver the finished report plus working papers only when requested. Do not include source tokens, TODOs, empty boilerplate, template instructions, unsupported superlatives, or private raw evidence in the final package.

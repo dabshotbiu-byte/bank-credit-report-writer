@@ -1,6 +1,6 @@
 # Business and product analysis
 
-Read this reference for every full credit report and every request to write or revise the operating section. The four supplied sample reports consistently use a deep sequence: explain the product in plain language, break down products/models and applications, show revenue structure, map the operating flow, analyze procurement/production/sales, connect customers and suppliers, then reach industry, competition and competitive-advantage conclusions. Match that depth rather than merely repeating headings.
+Read this reference for every full credit report and every request to write or revise the operating section. The four supplied sample reports consistently use a deep sequence: explain the product in plain language, break down products/models and applications, show revenue structure, map the operating flow, analyze procurement/production/sales, connect customers and suppliers, then reach industry, competition and competitive-advantage conclusions. Match that depth rather than merely repeating headings. Apply the visible heading ladder in [template-fidelity.md](template-fidelity.md) and the prose rules in [style-guide.md](style-guide.md).
 
 ## Mandatory product register
 
@@ -13,9 +13,9 @@ The register must include every disclosed product or service line. Group several
 - separately quantify or discuss any model with a different price band, margin, lifecycle, customer base or competitive position;
 - never use “其他产品” to absorb a material or strategically important line.
 
-## Required order in the report
+## Required analytical order in the report
 
-Keep the exact headings and question order of the supplied template, while ensuring the business content covers this sequence:
+Keep the exact field/question order of the supplied template while normalizing visible heading levels to `一、` → `1.` → `1）`, unless the user expressly requests another numbering scheme. Ensure the business content covers this sequence:
 
 1. **主营业务总览**：收入性质属于生产、贸易、项目、订阅或服务；主要收入和利润由什么产生；企业在产业链中处于哪一层。
 2. **产品结构及逐产品分析**：先用非专业读者能理解的语言解释产品，再列功能、构成、型号、参数、价格带和应用。
